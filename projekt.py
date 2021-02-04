@@ -41,17 +41,17 @@ class APRegistration(unittest.TestCase):
         bajgle = WebDriverWait(driver, 10).until(lambda driver : get_and_refresh(driver))
         print(bajgle)
         bajgle.click()
-        sleep(3)
+        sleep(5)
         #kup teraz
-        driver.find_element_by_css_selector('.shopify-payment-button__button').click()
+        driver.find_element_by_css_selector('button.btn > span:nth-child(1)').click()
         sleep(3)
-        #wpisz email
-        email_input =  driver.find_element_by_id('CustomerEmail')
-        email_input.send_keys(email)
-        #wpisz haslo
-        password_input = driver.find_element_by_id('CustomerPassword')
-        password_input.send_keys(haslo)
+        #zobacz koszyk
+        driver.find_element_by_css_selector('.cart-popup__cta-link').click()
+        #realizacja zakupu
+        driver.find_element_by_css_selector('.cart__submit').click()
         sleep(3)
+
+
 
     def tearDown(self):
             self.driver.quit()
