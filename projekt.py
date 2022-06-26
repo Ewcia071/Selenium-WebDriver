@@ -21,7 +21,7 @@ class APRegistration(unittest.TestCase):
     def testCorrectRegistration(self):
         driver = self.driver
         #Odnajdz Sklep Online
-        sklep_online = driver.find_element_by_partial_link_text('SKLEP ONLINE')
+        sklep_online = driver.find_element_by_partial_link_text('SKLEP')
         #1.Kliknij
         sklep_online.click()
         #kliknij "Pieczywo"
